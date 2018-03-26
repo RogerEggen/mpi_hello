@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
     char* pName = malloc(sizeof(char) * MPI_MAX_PROCESSOR_NAME);
     int pNameLength;
     MPI_Get_processor_name(pName, &pNameLength);
-    //pName[pNameLength] = '\0';
+
     char* pHostName = malloc(sizeof(char) * MPI_MAX_PROCESSOR_NAME);
     gethostname(pHostName, MPI_MAX_PROCESSOR_NAME);
     sprintf(msg, "Hello from process %d/%d. I am \"%s\", running on %s.", rank, worldSize,

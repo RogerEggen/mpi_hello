@@ -1,0 +1,3 @@
+/home/nlp/CLionProjects/mpi-hello/CMakeFiles/rebuild_cache.dir
+/home/nlp/CLionProjects/mpi-hello/CMakeFiles/edit_cache.dir
+/home/nlp/CLionProjects/mpi-hello/CMakeFiles/mpi_hello.dir

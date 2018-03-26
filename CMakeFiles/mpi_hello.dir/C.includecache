@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nlp/CLionProjects/mpi-hello/main.c
+stdio.h
+-
+mpi/mpi.h
+-
+string.h
+-
+stdlib.h
+-
+unistd.h
+-
+
