@@ -1,12 +1,7 @@
 #include <stdio.h>
-#include <mpi/mpi.h>
+#include <mpi.h>
 #include <string.h>
 #include <stdlib.h>
-#include <unistd.h>
-
-void printStringArray(char* array, int count);
-
-void replaceNulls(char* str, int len, char replaceWith);
 
 int main(int argc, char** argv) {
     MPI_Init(&argc, &argv);
@@ -64,34 +59,10 @@ int main(int argc, char** argv) {
         {
             printf("%s\n", &recvBuf[i * MESSAGE_LENGTH_MAX]);
         }
-        //printStringArray(recvBuf, worldSize);
     }
 
 
     MPI_Finalize();
 
     return 0;
-}
-
-void replaceNulls(char* str, int len, char replaceWith)
-{
-    for (int i=0; i<len; ++i)
-    {
-        char c = str[i];
-        if (c == '\0')
-            str[i] = replaceWith;
-    }
-}
-
-void printStringArray(char* array, int count)
-{
-    int startIdx = 0;
-    for (int i=0; i < count; )
-    {
-        printf("%s\n", &array[startIdx]);
-        int mylen = (int)strlen(&array[startIdx]);
-        //printf("just printed %d chars from %d to %d.\n", mylen, startIdx, startIdx + mylen);
-        startIdx += mylen + 1;
-        ++i;
-    }
 }
